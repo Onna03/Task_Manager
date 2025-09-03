@@ -14,9 +14,9 @@ export const getTasks = async (req, res) => {
 // @desc   Create task
 // @route  POST /api/tasks
 export const createTask = async (req, res) => {
-    const { title, description, category } = req.body;
+    const { title, description, category, dueDate } = req.body;
     try {
-        const newTask = new Task({ title, description, category });
+        const newTask = new Task({ title, description, category, dueDate });
         const savedTask = await newTask.save();
         res.status(201).json(savedTask);
     } catch (error) {
@@ -43,7 +43,7 @@ export const getTaskById = async (req, res) => {
 // @route   PUT /api/tasks/:id
 export const updateTask = async (req, res) => {
     try {
-        const Task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (task) {
             res.json(task);
         } else {
