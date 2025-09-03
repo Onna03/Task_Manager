@@ -1,0 +1,107 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: rgba(0, 255, 0, 0.509);
+}
+
+.main-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+/* Left Panel (Form) */
+.left-panel {
+  flex: 1;
+  max-width: 350px;
+}
+
+.task-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-input input, 
+.task-input textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  font-size: 14px;
+  background-color: #333;
+  color: white;
+}
+
+.task-input textarea {
+  resize: none;
+  height: 50px;
+}
+
+.task-input #dueDate{
+  display: flex;
+  margin-top: 5px;
+}
+
+.task-input button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Right Panel (Tasks) */
+.right-panel {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.task-card {
+  background-color: #111;
+  padding: 12px;
+  border-radius: 8px;
+  width: 220px;
+}
+
+.task-card h3 {
+  margin-bottom: 6px;
+  color: rgba(0, 255, 0, 0.509)
+}
+
+.task-card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(0, 255, 0, 0.509);
+  color: white;
+  cursor: pointer;
+}
+
+/* Message for no tasks */
+.no-tasks {
+  color: #aaa;
+  font-style: italic;
+}
