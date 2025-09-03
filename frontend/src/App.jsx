@@ -60,7 +60,7 @@ function App() {
         {/* Left side - Form */}
         <div className="left-panel">
           <div className="task-input">
-            <label>📝 Title:</label>
+            <label>Title:</label>
             <input
               type="text"
               name="title"
@@ -68,14 +68,14 @@ function App() {
               value={formData.title}
               onChange={handleChange}
             />
-            <label>📄 Description:</label>
+            <label>Description:</label>
             <textarea
               name="description"
               placeholder="Enter task description"
               value={formData.description}
               onChange={handleChange}
             />
-            <label>🏷️ Category:</label>
+            <label>Category:</label>
             <input
               type="text"
               name="category"
@@ -83,14 +83,14 @@ function App() {
               value={formData.category}
               onChange={handleChange}
             />
-            <label>⏰ Due Date:</label>
+            <label>Due Date:</label>
             <input
               type="date"
               name="dueDate"
               value={formData.dueDate || ""}
               onChange={handleChange}
             />
-            <button onClick={handleAdd}>🚀 Add Task</button>
+            <button onClick={handleAdd}>Add Task</button>
           </div>
         </div>
 
@@ -100,15 +100,15 @@ function App() {
             <div className="tasks-container">
               {tasks.map((task) => (
                 <div className="task-card" key={task._id}>
-                  <h3>📋 {task.title}</h3>
+                  <h3>{task.title}</h3>
                   <p>
-                    <strong>📝 Description:</strong> {task.description || "—"}
+                    <strong>Description:</strong> {task.description || "—"}
                   </p>
                   <p>
-                    <strong>🏷️ Category:</strong> {task.category || "—"}
+                    <strong>Category:</strong> {task.category || "—"}
                   </p>
                   <p>
-                    <strong>⏰ Due:</strong>{" "}
+                    <strong>Due:</strong>{" "}
                     {task.dueDate
                       ? new Date(task.dueDate).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -117,12 +117,12 @@ function App() {
                         })
                       : "No deadline"}
                   </p>
-                  <button onClick={() => handleDelete(task._id)}>✅ Mark Complete</button>
+                  <button onClick={() => handleDelete(task._id)}>Mark Complete</button>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="no-tasks">🎯 No tasks yet. Create your first task to get started!</p>
+            <p className="no-tasks">No tasks yet. Create your first task to get started!</p>
           )}
         </div>
       </div>
